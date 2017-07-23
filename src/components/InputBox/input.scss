@@ -1,0 +1,84 @@
+@import '../../styles/variable';
+
+.group {
+  position: relative;;
+  input {
+    box-shadow: none;
+    &:focus ~ .bar::before{
+      width: 100%;
+      left: 0;
+    }
+  }
+  input[type=search] {
+    border-bottom:1px solid $borderCol !important;
+    border: 0;
+    @include padd(9px 10px 9px 32px);
+    @extend .fullWidth;
+    @include border-radius(3px);
+    @include fSize(15px);
+    -webkit-appearance: textfield;
+  }
+}
+
+
+
+
+
+.group input[type=number], .group input[type=password], .group input[type=tel], .group input[type=text], .group select  {
+  @extend .fullWidth;
+  //@extend .show;
+  @include border-radius(0);
+  @include fSize(15px);
+  @include fWeight(600);
+  @include padd(10px 10px 10px 5px);
+  border-bottom:1px solid $borderCol !important;
+  border:none;
+  box-sizing:border-box;
+  margin-top: 22px;
+}
+.bar {
+  @extend .show;
+  position: relative;
+  &:before {
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+    @extend .posAbo;
+    background:$Black;
+    bottom:1px;
+    content:'';
+    height:2px;
+    left:50%;
+    transition:0.2s ease all;
+    width:0;
+  }
+  &:after {
+    -moz-transition:0.2s ease all;
+    -webkit-transition:0.2s ease all;
+    @extend .posAbo;
+    background:$Blue;
+    bottom:0px;
+    content:'';
+    height:2px;
+    right:50%;
+    transition:0.2s ease all;
+    width:0;
+  }
+}
+
+
+.cross{
+  @extend .posAbo;
+  @include marg(-31px 4px 0 0);
+  right: 0;
+  cursor: pointer;
+  @include padd(4px);
+  i{
+    @include fSize(15px);
+  }
+}
+
+.hidden {
+  display:none;
+}
+
+

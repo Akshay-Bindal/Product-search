@@ -1,7 +1,5 @@
 {
-  "name": "InputBox",
-  "version": "0.0.0",
-  "private": true,
-  "main": "./InputBox.js"
+  "name": "InputElem",
+  "version": "0.0.1",
+  "main": "./inputBox.js"
 }
-

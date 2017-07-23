@@ -1,0 +1,32 @@
+@import '../../styles/variable';
+
+.headerContainer {
+  position: fixed;
+  top: 0;
+  transition: all .25s ease-in-out;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  width: 100%;
+  z-index: 99;
+  height: 80px;
+  padding: 0 4%;
+  min-width: 1000px;
+  text-align: center;
+  border-bottom:1px solid $borderCol;
+  background: $White;
+}
+
+.headerLogo, .headerUserInfo {
+  position: relative;
+  float: left;
+  top: 40%;
+  margin-right: 3%;
+  width: 20%;
+}
+
+.headerLogo{
+  top: 0;
+  img{
+    height: 79px;
+  }
+}

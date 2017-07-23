@@ -1,34 +1,46 @@
 /**
- * React Starter Kit (https://www.reactstarterkit.com/)
- *
- * Copyright © 2014-present Kriasoft, LLC. All rights reserved.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE.txt file in the root directory of this source tree.
+ * Created by akshaybindal on 23/07/17.
  */
 
-import React from 'react';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './Header.css';
-import Link from '../Link';
-import InputElem from '../InputBox';
+import React, { PropTypes, Component } from 'react';
+import './header.scss';
+import SearchBar from '../SearchBar';
+import logo from '../../styles/Mezi_logowebsite-1.jpg';
 
+export default class Header extends React.Component {
 
-class Header extends React.Component {
-  render() {
-    return (
-      <div className={s.root}>
-        <div className={s.container}>
-          <Link className={s.brand} to="/">
-            <span className={s.brandTxt}>Mezi</span>
-          </Link>
-          <div className={s.banner}>
-            <InputElem />
-          </div>
-        </div>
-      </div>
-    );
-  }
+	constructor(props) {
+		super(props);
+		this.state = {
+
+		};
+	}
+
+	onSearchHandler = (str) => {
+		this.props.onSearchHandler(str);
+	}
+
+	render() {
+		return (
+			<div className='headerContainer'>
+				<div className='headerLogo'>
+					<img src={logo} />
+				</div>
+				<SearchBar
+					onSearchHandler={this.onSearchHandler}
+				/>
+				<div className='headerUserInfo'>
+					Log in/Sign up
+				</div>
+			</div>
+		)
+	}
 }
 
-export default withStyles(s)(Header);
+Header.propTypes = {
+	onSearchHandler : PropTypes.func
+};
+
+Header.defaultProps = {
+	onSearchHandler: () => {},
+};

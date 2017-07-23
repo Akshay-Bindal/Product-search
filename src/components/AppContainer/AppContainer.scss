@@ -1,0 +1,36 @@
+@import '../../styles/variable';
+
+.appContainer {
+  @include marg(80px auto);
+  @include padd(2% 4%);
+  min-width: 1000px;
+  .filters {
+    @extend .fl;
+  }
+
+  .products {
+    @include padd(0 0 2% 0);
+    @extend .fl;
+    @extend .fullWidth;
+  }
+  .list{
+    @extend .fr;
+    .heading{
+      display: inline-block;
+      padding-right: 20px;
+      @include fWeight(600);
+      @include fSize(15px);
+    }
+    ul{
+      display: inline-block;
+      li{
+        display: inline-block;
+        @include padd(0 10px 5px 10px);
+      }
+    }
+  }
+  .noProduct {
+    @include tAlign(center);
+  }
+}
+

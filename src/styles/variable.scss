@@ -1,0 +1,58 @@
+
+$Black: #000;
+$White: #fff;
+$Blue: #00b9f5;
+$greyBG:#f3f7f8;
+$borderCol: #ebebeb;
+$disablCol:#eaeaea;
+$Green:#20BF79;
+$Orange:#ffa500;
+
+.fr {float:right;}
+.fl {float:left;}
+.clear {clear:both;}
+.fullWidth {width:100%;}
+.overHidden {overflow:hidden;}
+.overVisi {overflow: visible;}
+.posAbo {position: absolute;}
+.hide {display: none;}
+.show {display: block;}
+.inBlock {display: inline-block}
+.cursor{cursor: pointer;}
+.capitalize{text-transform: capitalize;}
+
+.greyBG{background:$greyBG;}
+.whiteBG{background:$White;}
+.mb0{margin-bottom:0px !important;}
+.fl{float:left;}
+
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -moz-border-radius: $radius;
+  -webkit-border-radius: $radius;
+}
+
+@mixin bShadow($value) {
+  -moz-box-shadow: $value;
+  -webkit-box-shadow: $value;
+  box-shadow: $value;
+}
+
+
+@mixin padd($pixels) {padding: $pixels}
+@mixin marg($pixels) {margin: $pixels}
+@mixin pos($type) {position: $type;}
+@mixin fWeight($fWeight) {font-weight: $fWeight;}
+@mixin fSize($fSize) {font-size: $fSize;}
+@mixin bBottom($value) {border-bottom: $value;}
+@mixin bTop($value) {border-top: $value;}
+@mixin display($type) {display: $type;}
+@mixin tAlign($type) {text-align: $type;}
+@mixin overflow($type) {overflow: $type;}
